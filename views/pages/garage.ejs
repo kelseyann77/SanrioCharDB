@@ -1,0 +1,15 @@
+<html>
+<head>
+
+</head>
+<body>
+<h1>Bill's Garage: </h1>
+<ul>
+    <% for(car of cars) { %>
+        <li>
+            <%= car.color + " " + car.year + " " + car.make + " " + car.model %> 
+        </li>
+    <% } %>
+</ul>
+</body>
+</html>

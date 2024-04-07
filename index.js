@@ -6,7 +6,7 @@ const port = 3000;
 mongoose.connect('mongodb://localhost:27017/test', {useNewUrlParser: true}).catch(error => console.log("Something went wrong: " + error));
 
 // Replaced carModel with sanrioChar
-var sanrioChar = require("./sanrio/characters");
+var carModel = require("./models/car");
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded());
@@ -17,7 +17,7 @@ app.get("/form", function(req, res){
 });
 
 app.get("/garage", function(req,res) {
-    sanrioChar.listAllCars().then(function(cars){
+    carModel.listAllCars().then(function(cars){
         res.render("pages/garage", {cars:cars});
     }).catch(function(error){ 
         res.error("Something went wrong!" + error );
@@ -27,7 +27,7 @@ app.get("/garage", function(req,res) {
 
 app.post('/car', function(req, res){
     console.log("Car: " + JSON.stringify(req.body.car));
-    var newCar = new sanrioChar(req.body.car);
+    var newCar = new carModel(req.body.car);
     
     newCar.save().then(function(){
         res.send("Added new car to database!");
