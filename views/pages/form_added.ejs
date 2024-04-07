@@ -14,28 +14,32 @@
 
     <div class="nav">
         <a href="index.html" class="logo">Kelsey Corro</a>
-        <a class="active" href="index">Home</a>
-        <a href="form">Form</a>
+        <a href="index">Home</a>
+        <a class="active" href="form">Form</a>
         <a href="collection">Collection</a>
     </div> 
 
     <body>
-        <!-- <%- include("../partials/header") %> -->
-        <h1>Sanrio Characters Database</h1>
-        <p>
-            CS 532 - Modern Web Technologies<br>
-            RESTful API and Database Application Assignment<br>
-        </p>
+        <h1>Added new character to database!</h1>
+        <div class="form-container">
+            <h1>Send Entry into Database:</h1>
+            <form method="post" action="/character">
 
-        <h2>Instructions</h2>
-        <p>
-            Sanrio is the brand responsible for the creation of <br>
-            popular characters such as Hello Kitty, Cinnamoroll, <br>
-            Gudetama, Aggretsuko, and many more.<br><br>
-            With this application, you can add characters, <br>
-            their species, their creation date, and birthday <br>
-            into the system and easily view the database.
-        </p>
-        <!-- <%- include("../partials/footer") %> -->
+                <label for="characterName">Character Name:</label>
+                <input type="text" name="character[name]"><br>
+
+                <label for="species">Species:</label>
+                <input type="text" name="character[species]"><br>
+                
+                <label for="creationYear">Creation Year:</label>
+                <input type="number" name="character[creation_year]"><br>
+                
+                <label for="birthday">Birthday:</label>
+                <input type="date" name="character[birthday]"><br>
+
+                <input type="submit" value="Submit">
+
+            </form>  
+        </div>     
     </body>
 </html>

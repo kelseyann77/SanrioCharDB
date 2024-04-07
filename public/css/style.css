@@ -1,0 +1,157 @@
+/* Background color for navigation bar */
+.nav {
+	background-color: #D63484;
+	overflow: hidden;
+  width: 100%;
+}
+
+/* Style title name inside the navigation bar */
+.nav a.logo {
+	float: right;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 20px;
+	margin-top: 5px;
+	text-decoration: none;
+	font-size: 30px;
+	font-family: "Berkshire Swash";
+}
+
+/* Style the links inside the navigation bar */
+.nav a {
+	float: left;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 22px 20px;
+	text-decoration: none;
+	font-size: 27px;
+	font-family: "Protest Riot";
+  display: flex;
+}
+  
+/* Change the color of links on hover */
+.nav a:hover {
+	background-color: #ddd;
+	color: #D63484;
+}
+  
+/* Add a color to the active/current link */
+.nav a.active {
+	background-color: #ff72c0;
+	color: white;
+}
+
+.content {
+	max-width: 560px;
+	margin: auto;
+}
+
+body {
+	background-color: #FF9BD2;
+    font-family: "Raleway";
+	font-weight: 500;
+	text-align: center;
+}
+
+/* h1 {
+	font-family: "Raleway";
+  	font-size: xx-large;
+	color: #D63484;
+	text-align: center;
+	margin: 0px;
+	padding: 5px;
+} */
+
+p {
+	font-family: "Raleway";
+	font-weight: 500;
+	text-align: center;
+	text-justify: inter-word;
+}
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+  }
+
+.foot {
+	background-color: #d85d9b;
+	overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+	.nav a {
+	  float: none;
+    width: 100%;
+    length: 500px;
+	  text-align: center;
+    font-size: 30px;
+    overflow: auto;
+	}
+
+  .nav a.logo {
+    float: none;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 35px;
+  }
+  
+  /* h1 {
+    font-family: "Protest Riot";
+    font-size: 28px;
+    color: #D63484;
+    text-align: center;
+    margin: 0px;
+    padding: 5px;
+  } */
+}
+
+/* Style the form container */
+.form-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+	padding: 20px;
+	background-color: #f2f2f2;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style form labels */
+label {
+	font-weight: bold;
+	margin-bottom: 10px;
+	display: block;
+}
+
+/* Style form inputs */
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+	width: 100%;
+	padding: 8px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+
+/* Style form submit button */
+input[type="submit"] {
+	grid-column: span 2;
+	width: 100%;
+	padding: 10px;
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+/* Change submit button color on hover */
+input[type="submit"]:hover {
+	background-color: #45a049;
+}

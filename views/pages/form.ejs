@@ -1,15 +1,44 @@
 <html>
     <head>
-
+        <title>Sanrio Database</title>
+        <meta name="description" content="Index">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css?family=Protest+Riot" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Grandstander" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
     </head>
+
+    <div class="nav">
+        <a href="index.html" class="logo">Kelsey Corro</a>
+        <a href="index">Home</a>
+        <a class="active" href="form">Form</a>
+        <a href="collection">Collection</a>
+    </div> 
+
     <body>
-        <h1>Test Form:</h1>
-        <form method="post" action="/character">
-            Character Name: <input type="text" name="character[name]"><br>
-            Species: <input type="text" name="character[species]"><br>
-            Creation Year: <input type="number" name="character[creation_year]"><br>
-            Birthday: <input type="date" name="character[birthday]"><br>
-            <input type="submit" value="Submit">
-        </form>       
+        <div class="form-container">
+            <h1>Send Entry into Database:</h1>
+            <form method="post" action="/character">
+
+                <label for="characterName">Character Name:</label>
+                <input type="text" name="character[name]"><br>
+
+                <label for="species">Species:</label>
+                <input type="text" name="character[species]"><br>
+                
+                <label for="creationYear">Creation Year:</label>
+                <input type="number" name="character[creation_year]"><br>
+                
+                <label for="birthday">Birthday:</label>
+                <input type="date" name="character[birthday]"><br>
+
+                <input type="submit" value="Submit">
+
+            </form>  
+        </div>     
     </body>
 </html>
