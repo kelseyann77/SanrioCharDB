@@ -1,0 +1,15 @@
+<html>
+<head>
+
+</head>
+<body>
+<h1>Sanrio Characters: </h1>
+<ul>
+    <% for(character of characters) { %>
+        <li>
+            <%= character.name + " " + character.species + " " + character.creation_year + " " + character.birthday %> 
+        </li>
+    <% } %>
+</ul>
+</body>
+</html>
