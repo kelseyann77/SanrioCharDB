@@ -33,9 +33,22 @@ app.get("/collection", function(req,res) {
     
 })
 
-app.get("/before/:creation_year", function(req, res) {
-    sanrioChar.find({creation_year : {$lt : req.params.creation_year}}).then(function(characters){
-        res.render("pages/collection", {characters:characters});
+app.get("/query", function(req, res){
+    res.render("pages/query");
+});
+
+// app.get("/before/:creation_year", function(req, res) {
+//     sanrioChar.find({creation_year : {$lt : req.params.creation_year}}).then(function(characters){
+//         res.render("pages/collection", {characters:characters});
+//     });
+// });
+
+app.get("/before", function(req, res) {
+    const creationYear = req.query.creationYear; // Retrieve the value of creationYear from the query parameters
+    sanrioChar.find({ creation_year: { $lt: creationYear } }).then(function(characters) {
+        res.render("pages/collection", { characters: characters });
+    }).catch(function(error) {
+        res.err("Failed to perform query!");
     });
 });
 
