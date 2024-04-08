@@ -99,23 +99,14 @@ p {
     font-size: 35px;
   }
   
-  /* h1 {
-    font-family: "Protest Riot";
-    font-size: 28px;
-    color: #D63484;
-    text-align: center;
-    margin: 0px;
-    padding: 5px;
-  } */
 }
 
 /* Style the form container */
 .form-container {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 20px;
+	width: 40%;
+	margin: 0 auto;
 	padding: 20px;
-	background-color: #f2f2f2;
+	background-color: #ffbaff;
 	border-radius: 10px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -141,7 +132,6 @@ input[type="date"] {
 
 /* Style form submit button */
 input[type="submit"] {
-	grid-column: span 2;
 	width: 100%;
 	padding: 10px;
 	background-color: #4CAF50;
