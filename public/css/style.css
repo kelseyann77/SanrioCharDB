@@ -145,3 +145,20 @@ input[type="submit"] {
 input[type="submit"]:hover {
 	background-color: #45a049;
 }
+
+table {
+	font-family: "Raleway";
+	border-collapse: collapse;
+	width: 60%;
+	margin: 0 auto;
+  }
+  
+  td, th {
+	border: 1px solid #46132c;
+	text-align: left;
+	padding: 8px;
+  }
+  
+  tr:nth-child(odd) {
+	background-color: #d85d9b;
+  }

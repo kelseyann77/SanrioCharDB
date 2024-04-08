@@ -21,12 +21,22 @@
 
     <body>
     <h1>List of Sanrio Characters in Database </h1>
-    <ul>
-        <% for(character of characters) { %>
-            <li>
-                <%= character.name + " " + character.species + " " + character.creation_year + " " + character.birthday.toLocaleDateString() %> 
-            </li>
-        <% } %>
-    </ul>
+        <table>
+            <tr>
+                <th>Character Name</th>
+                <th>Species</th>
+                <th>Creation Year</th>
+                <th>Birthday</th>
+            </tr>
+            <% for(character of characters) { %>
+                <tr>
+                    <td><%= character.name %></td>
+                    <td><%= character.species %></td>
+                    <td><%= character.creation_year %></td>
+                    <td><%= character.birthday.toLocaleDateString() %></td>
+                    <!-- <%= character.name + " " + character.species + " " + character.creation_year + " " + character.birthday.toLocaleDateString() %>  -->
+                </tr>
+            <% } %>
+        </table>
     </body>
 </html>
