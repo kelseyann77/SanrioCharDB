@@ -53,15 +53,6 @@ body {
 	text-align: center;
 }
 
-/* h1 {
-	font-family: "Raleway";
-  	font-size: xx-large;
-	color: #D63484;
-	text-align: center;
-	margin: 0px;
-	padding: 5px;
-} */
-
 p {
 	font-family: "Raleway";
 	font-weight: 500;
@@ -132,6 +123,7 @@ input[type="date"] {
 
 /* Style form submit button */
 input[type="submit"] {
+	font-family: "Raleway";
 	width: 100%;
 	padding: 10px;
 	background-color: #4CAF50;
@@ -143,6 +135,23 @@ input[type="submit"] {
 
 /* Change submit button color on hover */
 input[type="submit"]:hover {
+	background-color: #45a049;
+}
+
+/* Style form submit button */
+button {
+	font-family: "Raleway";
+	width: 100%;
+	padding: 10px;
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+/* Change submit button color on hover */
+button:hover {
 	background-color: #45a049;
 }
 

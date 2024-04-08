@@ -33,42 +33,16 @@
             </form>
 
         </div>
+        <br>
+        <div class="form-container">
 
-        <div id="queryResults"></div>
+            <form method="get" action="/after">
+                <label for="creationYear">Characters Created After Year:</label>
+                <input type="number" id="creationYear" name="creationYear">
+                <button type="submit">Search</button>
+            </form>
 
-        <script>
-            document.getElementById('queryForm').addEventListener('submit', async function(event) {
-                event.preventDefault();
-                const formData = new FormData(this);
-                const creationYear = formData.get('creationYear');
-                try {
-                    const response = await fetch(`/before/${creationYear}`);
-                    const data = await response.json();
-                    displayResults(data);
-                } catch (error) {
-                    console.error('Error:', error);
-                }
-            });
-
-            function displayResults(characters) {
-                const queryResults = document.getElementById('queryResults');
-                queryResults.innerHTML = '';
-
-                if (characters.length === 0) {
-                    queryResults.textContent = 'No characters found.';
-                    return;
-                }
-
-                const ul = document.createElement('ul');
-                characters.forEach(character => {
-                    const li = document.createElement('li');
-                    li.textContent = `${character.name} (${character.creation_year})`;
-                    ul.appendChild(li);
-                });
-                queryResults.appendChild(ul);
-            }
-        </script>
-
+        </div>
     
     </body>
 </html>

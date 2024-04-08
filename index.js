@@ -37,12 +37,6 @@ app.get("/query", function(req, res){
     res.render("pages/query");
 });
 
-// app.get("/before/:creation_year", function(req, res) {
-//     sanrioChar.find({creation_year : {$lt : req.params.creation_year}}).then(function(characters){
-//         res.render("pages/collection", {characters:characters});
-//     });
-// });
-
 app.get("/before", function(req, res) {
     const creationYear = req.query.creationYear; // Retrieve the value of creationYear from the query parameters
     sanrioChar.find({ creation_year: { $lt: creationYear } }).then(function(characters) {
@@ -52,11 +46,20 @@ app.get("/before", function(req, res) {
     });
 });
 
-app.get("/after/:creation_year", function(req, res) {
-    sanrioChar.find({creation_year : {$gt : req.params.creation_year}}).then(function(characters){
-        res.render("pages/collection", {characters:characters});
+app.get("/after", function(req, res) {
+    const creationYear = req.query.creationYear; // Retrieve the value of creationYear from the query parameters
+    sanrioChar.find({ creation_year: { $gt: creationYear } }).then(function(characters) {
+        res.render("pages/collection", { characters: characters });
+    }).catch(function(error) {
+        res.err("Failed to perform query!");
     });
 });
+
+// app.get("/after/:creation_year", function(req, res) {
+//     sanrioChar.find({creation_year : {$gt : req.params.creation_year}}).then(function(characters){
+//         res.render("pages/collection", {characters:characters});
+//     });
+// });
 
 app.post('/character', function(req, res){
     console.log("Character: " + JSON.stringify(req.body.character));
