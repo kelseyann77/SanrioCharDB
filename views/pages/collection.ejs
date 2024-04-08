@@ -17,6 +17,7 @@
         <a href="index">Home</a>
         <a href="form">Form</a>
         <a class="active" href="collection">Collection</a>
+        <a href="query">Queries</a>
     </div> 
 
     <body>
@@ -34,7 +35,6 @@
                     <td><%= character.species %></td>
                     <td><%= character.creation_year %></td>
                     <td><%= character.birthday.toLocaleDateString() %></td>
-                    <!-- <%= character.name + " " + character.species + " " + character.creation_year + " " + character.birthday.toLocaleDateString() %>  -->
                 </tr>
             <% } %>
         </table>

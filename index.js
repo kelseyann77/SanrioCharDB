@@ -12,10 +12,10 @@ app.use(express.urlencoded());
 app.use(express.json());
 app.use(express.static("public")); 
 
+// Take user to index home page with "/" or "/index"
 app.get("/", function(req, res){
     res.render("pages/index");
 });
-
 app.get("/index", function(req, res){
     res.render("pages/index");
 });
@@ -39,13 +39,18 @@ app.get("/before/:creation_year", function(req, res) {
     });
 });
 
+app.get("/after/:creation_year", function(req, res) {
+    sanrioChar.find({creation_year : {$gt : req.params.creation_year}}).then(function(characters){
+        res.render("pages/collection", {characters:characters});
+    });
+});
+
 app.post('/character', function(req, res){
     console.log("Character: " + JSON.stringify(req.body.character));
     var newCharacter = new sanrioChar(req.body.character);
     
     newCharacter.save().then(function(){
         res.render("pages/form_added");
-        // res.send("Added new character to database!");
     }).catch(function(err){
         res.err("Failed to add new character to database!");
     });
